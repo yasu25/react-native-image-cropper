@@ -26,7 +26,24 @@ void main () {
   }
 });
 
-const Image = React.Component(
+//挙動確認用。uniforms
+export const GLImage = (props) => {
+    return (
+        <View>
+          <Node
+              shader={shaders.image}
+              uniforms={
+                  {
+                      t: 'http://i.imgur.com/zJIxPEo.jpg',
+                      crop: [ 0, 0, 1, 1 ]
+                  }
+              }
+          />
+        </View>
+    );
+};
+
+export const Image = React.Component(
 ({
   width,
   height,
